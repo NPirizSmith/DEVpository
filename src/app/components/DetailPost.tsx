@@ -18,7 +18,7 @@ async function getPost(postId: string) {
       return;
     }
 
-    const response = await fetch(`http://localhost:3000/api/post-by-id/${postId}?timestamp=${Date.now()}`);
+    const response = await fetch(`https://devpository.vercel.app/api/post-by-id/${postId}?timestamp=${Date.now()}`);
     if (response.ok) {
       const post = await response.json();
       return post.post as Post;
