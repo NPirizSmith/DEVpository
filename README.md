@@ -1,2 +1,2 @@
-# courses-app
-Aplicación de recopilación de cursos gratuitos para desarrolladores
+# DEVpository
+Aplicación de recopilación de herramientas y recursos para desarrolladores front-end.
