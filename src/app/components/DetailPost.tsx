@@ -42,8 +42,8 @@ export default async function DetailPost({ postId }: { postId: string }) {
   return (
     <main className='flex flex-col flex-wrap gap-y-2 grow px-6 w-full'>
         <div className='flex gap-x-2'>
-        <div className='overflow-hidden w-24 h-24 flex justify-center'>
-        <Image src={post?.logo || ""} alt="logo" width={48} height={48} className='w-fit'/>
+        <div className='overflow-hidden w-12 h-12 flex justify-center'>
+        <Image src={post?.logo || ""} alt="logo" width={96} height={96} className='w-fit'/>
         </div>
         <span className=' text-xl'>{post?.title}</span>
         </div>
