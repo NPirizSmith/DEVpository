@@ -13,8 +13,8 @@ export const validateData = (data: PartialData): { [key: string]: string } => {
     if (data.title === undefined || data.title === '') {
         errors.titleRequired = 'Este campo es obligatorio';
     } 
-    else if (data.title && (data.title.length > 50 || data.title.length < 10)) {
-        errors.titleLength = 'El título debe tener entre 10 y 50 caracteres';
+    else if (data.title && (data.title.length > 50 || data.title.length < 3)) {
+        errors.titleLength = 'El título debe tener entre 3 y 50 caracteres';
     }
 
     if (data.description === undefined || data.description === '') {

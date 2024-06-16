@@ -10,8 +10,8 @@ export async function POST(request: NextRequest) {
     console.log(tags);
      
 
-        if (title.length < 10 || title.length > 30) {
-            return NextResponse.json({ error: "El título debe tener entre 10 y 30 caracteres" }, { status: 400 });
+        if (title.length < 3 || title.length > 30) {
+            return NextResponse.json({ error: "El título debe tener entre 3 y 30 caracteres" }, { status: 400 });
         }
 
         if (description.length < 50 || description.length > 400) {
