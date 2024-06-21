@@ -102,9 +102,9 @@ export default async function ParaTi(searchParams: SearchParams) {
             {session?.user && userPreferences.length <= 0 ? <Link href='/preferencias' className="flex hover:text-dark-200 gap-x-2 items-center m-4"><Settings w={20} h={20}/>Ajusta tus preferencias para personalizar la página de inicio</Link> : <></> }
             {!session?.user ? <Link href='/conectar' className="flex hover:text-dark-200 gap-x-2 items-center m-4"><Settings w={20} h={20}/>Inicia sesión para ajustar tus preferencias</Link> : <></>}
             {posts.length == 0 ? 
-                <span className="self-center content-center grow">
+                <span className="self-center grow flex flex-col justify-center flex-nowrap content-center mx-6 text-center gap-4">
                 No se encontraron herramientas o recursos con tus preferencias
-                <Link href="/preferencias" className="flex justify-center items-center gap-x-2 hover:text-dark-200">
+                <Link href="/preferencias" className="bg-dark-200 dark:bg-dark-300 rounded-md p-1 flex justify-center items-center gap-x-2 w-min text-nowrap justify-self-center self-center hover:scale-110 font-medium">
                 Ajustar preferencias
                 <Settings w={20} h={20}/>
                 </Link>
