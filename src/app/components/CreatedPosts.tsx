@@ -11,7 +11,7 @@ interface searchParams {
 async function getCreatedPosts(id: string | undefined, searchParams: searchParams) {
 
   const pagina = searchParams.pagina || 1;
-  const pageSize = 5
+  const pageSize = 20
   const startIndex = (pagina - 1) * pageSize;
   const user = await prisma.user.findUnique({
     where: { id: id },
@@ -57,7 +57,7 @@ export default async function CreatedPosts(searchParams: searchParams) {
 
   return (
     <div className="flex flex-wrap flex-col content-center">
-      <div className="w-full">
+      <div className="w-full grow mb-12">
         {posts?.map(post => (
           <div key={post.id}>
             <Posts

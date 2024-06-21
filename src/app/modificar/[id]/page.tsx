@@ -271,8 +271,8 @@ const { getRootProps: getPreviewRootProps, getInputProps: getPreviewInputProps }
       tags: selectedTags.map(tag => tag.id),
       url: formData.url,
       userId: userId,
-      logo: updatedLogo,
-      preview: updatedPreview,
+      logo: updatedLogo || actualFile,
+      preview: updatedPreview || actualPreview,
     };    
 
     const errors = validateData(data);
@@ -288,7 +288,6 @@ const { getRootProps: getPreviewRootProps, getInputProps: getPreviewInputProps }
         });
 
         if (response.ok) {
-          console.log("AAA", data);
           
           toast.dismiss();
           toast.success('¡El post se modificó con éxito!');

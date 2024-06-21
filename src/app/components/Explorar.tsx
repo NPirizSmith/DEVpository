@@ -20,14 +20,14 @@ async function getPosts(userId: string | undefined, searchParams: searchParams) 
   const busqueda = searchParams.busqueda || "";
   const pagina = searchParams.pagina || 1;
 
-  const pageSize = 4;
+  const pageSize = 20;
   const startIndex = (pagina - 1) * pageSize;
   const result = await prisma.$transaction([
     prisma.post.count({
       where: {
         AND: [
           { published: true },
-          tag ? { tags: { some: { name: tag } } } : {},
+          tag ? { tags: { some: { name: tag} } } : {},
           busqueda
             ? {
               OR: [
@@ -46,7 +46,7 @@ async function getPosts(userId: string | undefined, searchParams: searchParams) 
       where: {
         AND: [
           { published: true },
-          tag ? { tags: { some: { name: tag } } } : {},
+          tag ? { tags: { some: { name: {contains: tag} } }} : {},
           busqueda
             ? {
               OR: [
@@ -92,7 +92,7 @@ export default async function Explorar(searchParams: searchParams) {
   return (
     <main className="flex flex-wrap flex-col content-center w-full">
       <Filters />
-      <div className="w-full grow">
+      <div className="w-full grow mb-12">
         {posts.length > 0 ? (
           posts.reverse().map(post => (
             <Posts

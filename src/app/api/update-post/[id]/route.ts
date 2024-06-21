@@ -51,6 +51,9 @@ export async function PUT(req: NextRequest, { params }: { params: { id: string }
             (newTag: Tag) => !post.tags.some((tag) => tag.id === newTag.id)
         );
 
+        console.log("tag para conectar", tagsToConnect);
+        
+
         const updatedPost = await prisma.post.update({
             where: { id: postId },
             data: {
@@ -59,7 +62,7 @@ export async function PUT(req: NextRequest, { params }: { params: { id: string }
                 url,
                 tags: {
                     disconnect: tagsToDisconnect.map((tag) => ({ id: tag.id })),
-                    connect: tagsToConnect.map((tag: Tag) => ({ id: tag.id }))
+                    connect: tagsToConnect.map((tag: Tag) => ({ id: tag }))
                 },
                 logo,
                 preview

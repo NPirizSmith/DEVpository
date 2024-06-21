@@ -17,7 +17,7 @@ async function getPosts(userId: string, userPreferences: UserPreferences, search
 
     const pagina = parseInt(searchParams.pagina || "1");
 
-    const pageSize = 5   
+    const pageSize = 20   
     const startIndex = (pagina - 1) * pageSize;        
     const result = await prisma.$transaction([
         prisma.post.count({
@@ -111,7 +111,7 @@ export default async function ParaTi(searchParams: SearchParams) {
       
                 </span> : 
 
-            <div className="w-full grow">
+            <div className="w-full grow mb-12">
             {formattedPosts.reverse().map(post => (
                 <Posts
                     key={post.id}

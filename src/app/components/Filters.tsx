@@ -6,6 +6,7 @@ import { ArrowB } from "./icons/ArrowB";
 import { Certificate } from "./icons/Certificate";
 import { Search } from "./icons/Search";
 import { Filter } from "./icons/Filter";
+import { X } from "./icons/X";
 
 type Tag = {
   id: number;
@@ -40,18 +41,14 @@ function Filters() {
       } catch (error) {
         console.error("Error fetching tags:", error);
       }
-    };
-
+    }
     const queryTag = searchParams.get("tag")?.toString();
     const queryOrder = searchParams.get("orden")?.toString();
     setSelectedTag(queryTag);
-
     setOrder(queryOrder);
     fetchTags();
   }, [searchParams]);
 
-
-  
 
   function handleOpenFilter() {
     setIsOpenFilter(!isOpenFilter)
@@ -114,7 +111,7 @@ function Filters() {
     <div className="flex px-6 w-full flex-wrap justify-end">
       <button className="lg:hidden top-[4.5rem] flex gap-x-1 items-center absolute" onClick={handleOpenFilter}><Filter w={20} h={20} /></button>
       {isOpenFilter && <div className="flex justify-center items-center absolute size-full bg-dark-900 bg-opacity-80 z-50 left-0 top-0"><div className="lg:hidden absolute z-[99] w-10/12 h-4/5 bg-dark-100 dark:bg-dark-900">
-        <span onClick={handleOpenFilter} className="relative flex justify-end cursor-pointer p-2">x</span>
+        <span onClick={handleOpenFilter} className="relative flex justify-end cursor-pointer p-2"><X/></span>
         <div className="w-full flex flex-col gap-x-2 justify-center gap-y-12 items-center mt-2">
        
 
@@ -130,7 +127,7 @@ function Filters() {
             className="justify-between w-40 cursor-pointer">
             <div className={`flex bg-dark-50 dark:bg-dark-300 rounded-md h-10 justify-evenly hover:bg-dark-200 dark:hover:bg-dark-400 ${order && "bg-dark-500 hover:bg-dark-300 text-dark-50 dark:bg-dark-50 dark:text-dark-900 dark:hover:bg-dark-300 dark:hover:text-dark-50"}`}>
               <button
-                className="flex overflow-hidden w-full items-center justify-center text-nowrap"
+                className="flex overflow-hidden w-full items-center justify-center text-nowrap font-semibold"
                 onClick={handleToggleDropdownOrder}
               >
                 {order === "mejor-calificado"
@@ -140,7 +137,7 @@ function Filters() {
               </button>
               {order && (
                 <button className="clear-filter p-2" onClick={handleClearFilterOrder}>
-                  <span className="clear-icon">x</span>
+                  <span className="clear-icon"><X/></span>
                 </button>
               )}
             </div>
@@ -173,7 +170,7 @@ function Filters() {
                 className="flex w-full cursor-pointer items-center justify-center"
                 onClick={handleToggleDropdown}>
                 <button
-                  className="flex overflow-hidden  items-center text-nowrap max-w-28"
+                  className="flex overflow-hidden  items-center text-nowrap max-w-28 font-semibold"
                 >
                   {selectedTag ? selectedTag : "Tag"}
                 </button>
@@ -181,7 +178,7 @@ function Filters() {
               </div>
               {selectedTag && (
                 <button className="clear-filter p-2 self-center" onClick={handleClearFilter}>
-                  <span className="clear-icon">x</span>
+                  <span className="clear-icon"><X/></span>
                 </button>
               )}
             </div>
@@ -234,8 +231,9 @@ function Filters() {
           className="w-max justify-between">
           <div className={`flex bg-dark-50 dark:bg-dark-300 rounded-md h-10 justify-evenly hover:bg-dark-200 dark:hover:bg-dark-400 ${order && "bg-dark-500 hover:bg-dark-300 text-dark-50 dark:bg-dark-50 dark:text-dark-900 dark:hover:bg-dark-300 dark:hover:text-dark-50"}`}>
             <button
-              className="flex text-nowrap overflow-hidden items-center px-2"
+              className="flex text-nowrap overflow-hidden items-center px-2 font-semibold"
               onClick={handleToggleDropdownOrder}
+
             >
               {order === "mejor-calificado"
                 ? "Mejor calificado"
@@ -244,7 +242,7 @@ function Filters() {
             </button>
             {order && (
               <button className="clear-filter p-2" onClick={handleClearFilterOrder}>
-                <span className="clear-icon">x</span>
+                <span className="clear-icon"><X/></span>
               </button>
             )}
           </div>
@@ -277,7 +275,7 @@ function Filters() {
               className="flex w-full cursor-pointer items-center justify-center"
               onClick={handleToggleDropdown}>
               <button
-                className="flex overflow-hidden  items-center text-nowrap justify-center px-2"
+                className='flex overflow-hidden  items-center text-nowrap justify-center px-2 font-semibold'
               >
                 {selectedTag ? selectedTag : "Tag"}
               </button>
@@ -285,7 +283,7 @@ function Filters() {
             </div>
             {selectedTag && (
               <button className="clear-filter p-2 self-center" onClick={handleClearFilter}>
-                <span className="clear-icon">x</span>
+                <span className="clear-icon"><X/></span>
               </button>
             )}
           </div>

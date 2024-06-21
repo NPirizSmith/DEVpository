@@ -191,7 +191,6 @@ const [previewFileError, setPreviewFileError] = useState('');
         try {
             logo = await uploadImage(file, '/api/uploadImage');
             preview = await uploadImage(previewFile, '/api/uploadPreview');
-            toast.success('Archivos subidos correctamente');
         } catch (error) {
             toast.dismiss();
             toast.error('¡Hubo un error al subir las imágenes!');

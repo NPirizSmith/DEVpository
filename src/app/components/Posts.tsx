@@ -41,7 +41,7 @@ export default function Posts({
     <div className="flex w-full items-center p-3 font-bold text-gray-900 bg-gray-50 hover:bg-gray-100 hover:shadow dark:bg-dark-400 dark:hover:bg-dark-300 dark:text-dark-50 relative">
       <div className="flex w-full items-center">
         <div className='size-12 flex justify-center items-center'>
-        <Image src={logo || ""} width={48} height={48} alt={`${title} logo`} className="object-contain max-w-full h-full grid bg-gray-50 rounded-lg items-center justify-center"/>
+        <Image src={logo || ""} width={48} height={48} alt={`${title} logo`} className="object-contain max-w-full h-full grid rounded-lg items-center justify-center"/>
         </div>
         <div className="flex-col me-auto">
           <div className="flex items-center">
