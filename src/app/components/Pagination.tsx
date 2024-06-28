@@ -2,6 +2,9 @@
 
 import React, { useState, useEffect } from 'react';
 import { useRouter, usePathname, useSearchParams } from 'next/navigation';
+import { ArrowL } from './icons/ArrowL';
+import { ArrowB } from './icons/ArrowB';
+import { ArrowR } from './icons/ArrowR';
 
 type Page = number | { type: 'ellipsis'; value: number };
 
@@ -23,13 +26,13 @@ const Pagination = ({ totalPages }: { totalPages: number }) => {
       const from = Math.max(2, current - range);
       const to = Math.min(total - 1, current + range);
       let pages: number[] = [];
-  
+
       for (let i = 1; i <= total; i++) {
         if (i === 1 || i === total || (i >= from && i <= to)) {
           pages.push(i);
         }
       }
-      
+
       return insertEllipses(pages, current, total);
     };
 
@@ -84,13 +87,13 @@ const Pagination = ({ totalPages }: { totalPages: number }) => {
   };
 
   return (
-    <div className='flex self-center py-4'>
-      <button className='size-10 dark:bg-dark-400 rounded-md' onClick={handlePrevPage} disabled={currentPage === 1}>{'<'}</button>
+    <div className='flex self-center py-4 place-items-center'>
+      <button className='rounded-md' onClick={handlePrevPage} disabled={currentPage === 1}><ArrowL h={28} w={28} /></button>
       <div className='px-4'>
         {pages.map((page, index) => (
           <button
             key={index}
-            className={`size-10 ${typeof page === 'number' && currentPage === page ? "bg-dark-200 dark:bg-dark-400 rounded-full" : ""}`}
+            className={`size-10 font-semibold ${typeof page === 'number' && currentPage === page ? "bg-dark-900 dark:bg-dark-100 text-white dark:text-black rounded-full" : ""}`}
             onClick={() => typeof page === 'number' ? onPageChange(page) : onPageChange(page.value)}
             disabled={typeof page === 'number' ? currentPage === page : currentPage === page.value}
           >
@@ -98,7 +101,7 @@ const Pagination = ({ totalPages }: { totalPages: number }) => {
           </button>
         ))}
       </div>
-      <button className='size-10 dark:bg-dark-400 rounded-md' onClick={handleNextPage} disabled={currentPage === totalPages}>{'>'}</button>
+      <button className='rounded-md' onClick={handleNextPage} disabled={currentPage === totalPages}><ArrowR h={28} w={28} /></button>
     </div>
   );
 };

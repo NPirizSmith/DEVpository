@@ -62,10 +62,9 @@ export default async function FavoritePosts(searchParams: searchParams) {
 };
 
 async function getFavPosts(id: string | undefined, searchParams: searchParams) {
-
   const pagina = searchParams.pagina || 1;
-  const pageSize = 20
-  const startIndex = (pagina - 1) * pageSize;
+  const pageSize = 10;
+  const startIndex = (pagina - 1) * pageSize ;
   const user = await prisma.user.findUnique({
     where: { id: id },
     include: {
@@ -82,13 +81,17 @@ async function getFavPosts(id: string | undefined, searchParams: searchParams) {
     },
   });
 
-  const posts = user?.favoritePosts;
-  const formattedPosts = posts?.map(post => ({
-    ...post,
-    isFavorite: post.userFavorites.length > 0,
-  }));
+  const posts = user?.favoritePosts || [];
+  const totalPosts = await prisma.post.count({
+    where: {
+      published: true,
+      userFavorites: {
+        some: { id: id }
+      }
+    }
+  });
 
-  const totalPages = formattedPosts ? Math.ceil(formattedPosts.length / pageSize) : 0;
+  const totalPages = Math.ceil(totalPosts / pageSize);
 
-  return { posts: formattedPosts?.slice(startIndex, startIndex + pageSize), totalPages };
+  return { posts, totalPages };
 }

@@ -323,10 +323,10 @@ const { getRootProps: getPreviewRootProps, getInputProps: getPreviewInputProps }
               <label>Logo</label>
               <div {...getRootProps()} className='flex items-center justify-center border-dashed size-24 border-2 border-dark-200 dark:border-dark-400 rounded-md cursor-pointer text-center'>
                         <input {...getInputProps()} />
-                        {actualFile ? (<Image src={post.logo || ""} alt="Preview" width={24} height={24} className='w-fit'/>) 
+                        {actualFile ? (<Image src={post.logo || ""} alt="Preview" width={24} height={24} className='w-fit object-fill'/>) 
                         :
-                        (file ? (  <div className='overflow-hidden w-24 h-24 flex justify-center'>
-                          <Image src={URL.createObjectURL(file)} alt="Preview" width={24} height={24} className='w-fit'/>
+                        (file ? (  <div className='overflow-hidden size-24 flex justify-center'>
+                          <Image src={URL.createObjectURL(file)} alt="Preview" width={24} height={24} className='w-fit object-fill'/>
                          
                       </div>) : ( <Upload/>))
                         }

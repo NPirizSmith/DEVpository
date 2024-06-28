@@ -1,19 +1,7 @@
 import React from 'react';
 import { Favorite } from './icons/Favorite';
 
-function FilterButtonGroup() {
-  return (
-    <div className="hidden lg:flex w-full gap-x-2 justify-center mb-12">
-      {Array(5).fill(null).map((_, index) => (
-        <div key={index} className="w-36 justify-between">
-          <div className="flex bg-dark-300 rounded-md gap-x-2 h-10 justify-evenly">
-            <button></button>
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-}
+
 
 function PostSkeleton() {
   return (
@@ -48,8 +36,7 @@ function PostSkeleton() {
 
 export default function ExplorarSuspense() {
   return (
-    <main className="flex flex-wrap flex-col content-center w-full animate-pulse">
-      <FilterButtonGroup />
+    <main className="w-full animate-pulse">
       <div className="flex flex-col w-full items-center p-3 font-bold text-gray-900 bg-gray-50 dark:bg-dark-400 dark:text-dark-50 relative">
         {Array(5).fill(null).map((_, index) => (
           <PostSkeleton key={index} />

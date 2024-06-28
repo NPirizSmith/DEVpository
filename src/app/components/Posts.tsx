@@ -56,8 +56,8 @@ export default async function Posts({
   return (
     <div className="flex w-full items-center p-3 font-bold text-gray-900 bg-gray-50 hover:bg-gray-100 hover:shadow dark:bg-dark-400 dark:hover:bg-dark-300 dark:text-dark-50 relative">
       <div className="flex w-full items-center">
-        <div className='size-12 flex justify-center items-center'>
-        <Image src={logo || ""} width={48} height={48} alt={`${title} logo`} className={`object-contain max-w-full h-full grid rounded-lg items-center justify-center ${imageWrapperClass}`}/>
+        <div className={`size-12 flex justify-center items-center rounded-lg ${imageWrapperClass}`}>
+        <Image src={logo || ""} width={52} height={52} alt={`${title} logo`} className={`object-contain max-w-full h-full grid rounded-md items-center justify-center`}/>
         </div>
         <div className="flex-col me-auto">
           <div className="flex items-center">
@@ -74,8 +74,8 @@ export default async function Posts({
           
     
           </div>
-          <div className='flex gap-x-2 ms-3 text-xs'>
-          {tags.map((tag)=><div key={tag.id} className='rounded-lg p-1' style={{backgroundColor:`${tag.color}`}}>{tag.name}</div>)}
+          <div className='flex gap-x-2 ms-3 text-xs max-w-64 sm:max-w-[450px] md:max-w-[560px] lg:max-w-none  overflow-hidden'>
+          {tags.map((tag)=><div key={tag.id} className='rounded-lg p-1 ' style={{backgroundColor:`${tag.color}`}}>{tag.name}</div>)}
           </div>
         </div>
         <div className="flex flex-col justify-between items-center h-20">

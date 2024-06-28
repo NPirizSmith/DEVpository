@@ -91,6 +91,7 @@ export default async function Explorar(searchParams: searchParams) {
 
   return (
     <main className="flex flex-wrap flex-col content-center w-full">
+      <div className="flex w-full flex-col ">
       <Filters />
       <div className="w-full grow mb-12">
         {posts.length > 0 ? (
@@ -115,6 +116,8 @@ export default async function Explorar(searchParams: searchParams) {
         ) : (
           <h1 className=" text-center">No se encontraron resultados</h1>
         )}
+        
+      </div>
       </div>
       {totalPages > 1 && <Pagination totalPages={totalPages} />}
     </main>

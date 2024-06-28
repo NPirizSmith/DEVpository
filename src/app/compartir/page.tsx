@@ -266,7 +266,7 @@ const [previewFileError, setPreviewFileError] = useState('');
                         <input {...getInputProps()} />
                         {file ? (
                                    <div className='overflow-hidden w-24 h-24 flex justify-center'>
-                                <Image src={URL.createObjectURL(file)} alt="Preview" width={24} height={24} className='w-fit'/>
+                                <Image src={URL.createObjectURL(file)} alt="Preview" width={24} height={24} className='w-fit object-contain'/>
                                
                             </div>
                         ) : (
