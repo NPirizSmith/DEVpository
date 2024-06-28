@@ -27,7 +27,7 @@ const Carousel: React.FC<CarouselProps> = ({ items }) => {
   };
 
   const handleSkip = () => {
-    setCurrentIndex(4);
+    setCurrentIndex(5);
   };
 
   const handleMouseDown = (e: React.MouseEvent) => {
@@ -94,7 +94,7 @@ const Carousel: React.FC<CarouselProps> = ({ items }) => {
         </div>
       ))}
 
-      {currentIndex === 4 ? (
+      {currentIndex === 5 ? (
         <Link className="text-white absolute bottom-4 p-2 rounded-md bg-accent-500 hover:bg-opacity-50 hover:scale-105" href="/">Empezar</Link>
       ) : (
         <button className="text-white absolute bottom-4 p-2 rounded-md bg-accent-500 hover:bg-opacity-50 hover:scale-105" onClick={handleSkip}>Saltar recorrido</button>

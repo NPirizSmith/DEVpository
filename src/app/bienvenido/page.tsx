@@ -62,8 +62,8 @@ const page: React.FC = async() => {
       <div className='flex flex-col justify-between items-center h-20'>
       </div>
       <div className='flex flex-col justify-between items-center h-20 text-dark-200'>
-        <div className='flex content-center items-center size-10 rounded-md shadow-md bg-dark-500 animate-bounce'>
-        <Favorite w={30} h={30} fill={"transparent"} className=" justify-self-center cent"/>
+        <div className='flex content-center items-center size-10 rounded-md shadow-md bg-dark-500 justify-center animate-bounce'>
+        <Favorite w={30} h={30} fill={"transparent"} className=" justify-self-center self-center"/>
         </div>
         <div className="size-5 bg-dark-200 rounded-md z-10"></div>
       </div>
