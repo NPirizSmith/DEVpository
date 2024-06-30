@@ -137,7 +137,7 @@ function Navbar({ session }: { session: Session | null }) {
                     </div>
                 </div>
 
-                <div className="hidden lg:block h-svh ">
+                <div className="hidden lg:block h-svh">
                     <aside id="default-sidebar" className="relative top-0 left-0 z-40 w-52 h-full" aria-label="Sidebar">
                         <div className="h-full px-3 py-4 grow">
                             <div className="flex flex-col justify-between space-y-2 font-medium content-between h-4/5">

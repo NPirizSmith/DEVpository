@@ -48,7 +48,7 @@ export default async function DetailPost({ postId }: { postId: string }) {
   const isFavorite = post?.userFavorites?.some(favorite => favorite.id === userId) ?? false;
   const favCount = post?.userFavorites.length || 0;
 
-  const imageWrapperClass = averageColor?.isLight ? 'bg-dark-500' : 'bg-dark-50';
+  const imageWrapperClass = averageColor?.isLight ? 'bg-dark-900' : 'bg-dark-100';
 
   return (
     <main className='flex flex-col flex-wrap gap-y-2 grow px-6 w-full'>

@@ -49,8 +49,8 @@ export default async function Posts({
 
 
 
-  const imageWrapperClass = averageColor?.isLight ? 'bg-dark-500' : 'bg-dark-50';
-  
+  const imageWrapperClass = averageColor?.isLight ? 'bg-dark-900' : 'bg-dark-100';
+
 
   
   return (
@@ -74,9 +74,18 @@ export default async function Posts({
           
     
           </div>
-          <div className='flex gap-x-2 ms-3 text-xs max-w-64 sm:max-w-[450px] md:max-w-[560px] lg:max-w-none  overflow-hidden'>
-          {tags.map((tag)=><div key={tag.id} className='rounded-lg p-1 ' style={{backgroundColor:`${tag.color}`}}>{tag.name}</div>)}
-          </div>
+          <div className='flex gap-x-2 ms-3 text-xs max-w-64 sm:max-w-[450px] md:max-w-[560px] lg:max-w-none overflow-hidden'>
+  {tags.slice(0, 3).map((tag) => (
+    <div key={tag.id} className='rounded-lg p-1' style={{ backgroundColor: tag.color }}>
+      {tag.name}
+    </div>
+  ))}
+  {tags.length > 3 && (
+    <div className='p-1'>
+      + {tags.length - 3}
+    </div>
+  )}
+</div>
         </div>
         <div className="flex flex-col justify-between items-center h-20">
         <PostMenu postId={id} isFavorite={isFavorite} favCount={favCount} authorId={authorId} userId={userId} />

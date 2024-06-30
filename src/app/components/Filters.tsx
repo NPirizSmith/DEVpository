@@ -103,10 +103,10 @@ function Filters() {
   );
 
   return (
-    <div className="flex flex-wrap justify-end right-0 z-50 absolute">
+    <div className="flex flex-wrap justify-end right-0 absolute">
       <button className="lg:hidden -top-[2rem] px-4 flex gap-x-1 items-center absolute" onClick={handleOpenFilter}><Filter w={20} h={20} /></button>
       {isOpenFilter && 
-        <div className="lg:hidden dark:bg-dark-900 w-screen h-screen top-0 fixed select-none">
+        <div className="lg:hidden dark:bg-dark-900 bg-dark-50 w-screen h-screen top-0 fixed select-none z-50">
         <span onClick={handleOpenFilter} className="relative flex justify-end cursor-pointer p-2"><X/></span>
 <div className="flex flex-col items-center content-center asdfasdf">
         <span className="flex font-semibold w-48 justify-between mb-8">Filtros <Filter h="24" w="24"/></span>
@@ -193,11 +193,11 @@ function Filters() {
       {/*                                             LARGE FILTERS ----------------------------------------------------------------------------------------------------------------------------------- */}
 
 
-      <div className="hidden lg:flex flex-col right-0 w-56 px-4 select-none fixed">
+      <div className="hidden lg:flex flex-col left-0 w-56 px-4 select-none">
             <span className="flex font-semibold w-full justify-between mb-8">Filtros <Filter h="24" w="24"/></span>
 
         <div
-          className="w-full">
+          className="w-full ">
            <div className={`flex rounded-md h-10 justify-between`}>
             <div
               className="flex w-full cursor-pointer items-center justify-between"

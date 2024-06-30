@@ -98,7 +98,7 @@ export default async function ParaTi(searchParams: SearchParams) {
 
     return (
         <main className="flex flex-wrap flex-col content-center w-full">
-        
+    
             {session?.user && userPreferences.length <= 0 ? <Link href='/preferencias' className="flex hover:text-dark-200 gap-x-2 items-center m-4"><Settings w={20} h={20}/>Ajusta tus preferencias para personalizar la página de inicio</Link> : <></> }
             {!session?.user ? <Link href='/conectar' className="flex hover:text-dark-200 gap-x-2 items-center m-4"><Settings w={20} h={20}/>Inicia sesión para ajustar tus preferencias</Link> : <></>}
             {posts.length == 0 ? 
@@ -112,6 +112,7 @@ export default async function ParaTi(searchParams: SearchParams) {
                 </span> : 
 
             <div className="w-full grow mb-12">
+                <h1 className="flex w-full place-content-center font-medium text-xl">Recomendados</h1>
             {formattedPosts.reverse().map(post => (
                 <Posts
                     key={post.id}
