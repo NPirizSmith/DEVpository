@@ -112,7 +112,7 @@ export default async function ParaTi(searchParams: SearchParams) {
                 </span> : 
 
             <div className="w-full grow mb-12">
-                <h1 className="flex w-full place-content-center font-medium text-xl">Recomendados</h1>
+                <h1 className="w-full place-content-center font-medium text-xl hidden lg:flex">Recomendados</h1>
             {formattedPosts.reverse().map(post => (
                 <Posts
                     key={post.id}

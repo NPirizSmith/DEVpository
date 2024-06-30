@@ -94,7 +94,7 @@ export default async function Explorar(searchParams: searchParams) {
       <div className="flex w-full flex-col ">
       <Filters />
       <div className="w-full grow mb-12">
-      <h1 className="flex w-full place-content-center font-medium text-xl">Explorar</h1>
+      <h1 className="w-full place-content-center font-medium text-xl hidden lg:flex">Explorar</h1>
         {posts.length > 0 ? (
           posts.reverse().map(post => (
             <Posts
