@@ -116,7 +116,7 @@ const [previewFileError, setPreviewFileError] = useState('');
     const { getRootProps: getPreviewRootProps, getInputProps: getPreviewInputProps } = useDropzone({
         onDrop: handlePreviewFileChange,
         accept: {
-            'image/*': []
+            'image/jpeg, image/png, image/svg+xml': []
         },
         maxSize: 5 * 1024 * 1024,
     });
@@ -150,7 +150,8 @@ const [previewFileError, setPreviewFileError] = useState('');
     const { getRootProps, getInputProps } = useDropzone({
         onDrop: handleFileChange,
         accept: {
-            'image/*': []
+            'image/jpeg, image/png, image/svg+xml': []
+
         },
         maxSize: 5 * 1024 * 1024,
     });

@@ -5,14 +5,7 @@ const prisma = new PrismaClient();
 async function main() {
   await prisma.tag.createMany({
     data: [
-      { name: 'React', category: 'Framework', color: 'rgba(8, 76, 97, 0.5)' },
-      { name: 'Angular', category: 'Framework', color: 'rgba(39, 154, 241, 0.5)' },
-      { name: 'Svelte', category: 'Framework', color: 'rgba(39, 154, 241, 0.5)' },
-      { name: 'Vue.js', category: 'Framework', color: 'rgba(39, 154, 241, 0.5)' },
-      { name: 'HTML', category: 'Markup Language', color: 'rgba(252, 68, 15, 0.5)' },
-      { name: 'CSS', category: 'Stylesheet Language', color: 'rgba(252, 202, 59, 0.5)' },
-      { name: 'Bootstrap', category: 'CSS Framework', color: 'rgba(202, 59, 252, 0.5)' },
-      { name: 'Next.js', category: 'React Framework', color: 'rgba(39, 154, 241, 0.5)' },
+      
       { name: 'SVG', category: 'Design', color: 'rgba(87, 184, 255, 0.5)' },
       { name: 'Iconos', category: 'Design', color: 'rgba(87, 184, 255, 0.5)' },
       { name: 'Biblioteca', category: 'Tools', color: 'rgba(251, 177, 60, 0.5)' },
